@@ -1,0 +1,23 @@
+{
+  "name": "react-portfolio",
+  "description": "A place to share my projects with fellow developers and collaborate on future projects as well as freelance work and potential future job opportunities.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chelleyoungw/react-portfolio.git"
+  },
+  "author": "Chelle Wood",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chelleyoungw/react-portfolio/issues"
+  },
+  "homepage": "https://github.com/chelleyoungw/react-portfolio#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
