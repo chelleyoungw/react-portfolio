@@ -1,0 +1,326 @@
+/*! ROOT */
+/* Stores repeatable values for future CSS. */
+:root {
+    --black: #000000ff;
+    --green: #3c5a14ff;
+    --silver: #c6c5b9;
+    --gray: #475657;
+    --blue: #62929e;
+}
+
+/*! NORMALIZATION */
+/* Zeroes out padding and margin. + Sets a custom font. + Adjusts hashtag scrolling for fixed header. */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    scroll-margin-top: 69px;
+}
+
+/* Fixes default colors and effects applied to links. */
+a,
+a:link,
+a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Sets background color and forces content below fixed header. */
+body {
+    background-color: var(--tan);
+    margin-top: 80px;
+    /* This allows the header to be fixed. */
+    margin-bottom: 60px;
+    /* This allows the footer to be fixed. */
+}
+
+/*! HEADER AND NAVBAR */
+
+.header {
+    background-color: var(--black);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.headerContents {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 12px;
+    padding-right: 12px;
+    height: 80px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.logo img {
+    width: 35px;
+}
+
+.logoName {
+    color: var(--green);
+    font-size: 30px;
+    letter-spacing: 1.5px;
+    transition: all 0.25s;
+    margin: 0;
+}
+
+.navList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    column-gap: 10px;
+}
+
+.navList li {
+    color: var(--green);
+    font-size: 16px;
+    transition: all 0.5s;
+}
+
+.navList li:hover {
+    color: var(--gray);
+}
+
+.navList li.active a {
+    color: var(--blue);
+}
+
+/*! FOOTER */
+
+.footer {
+    background-color: var(--black);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.footerContents {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 12px;
+    padding-right: 12px;
+    column-gap: 30px;
+    height: 60px;
+}
+
+.footerContents img {
+    height: 30px;
+}
+
+/*! ABOUT PAGE */
+
+.about-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 140px);
+    background-color: var(--tan);
+}
+
+.about-content-container {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    color: var(--black);
+}
+
+.about-content-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-content-container p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-content-container img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    max-width: 200px;
+    height: auto;
+}
+
+/*! CODE PAGE */
+
+.code-page {
+    padding: 20px;
+    background-color: var(--tan);
+}
+
+.code-page h1,
+.code-page p {
+    text-align: center;
+    color: var(--black);
+}
+
+.code-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.codeCard {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.codeCard h2 {
+    color: var(--black);
+}
+
+.codeCard img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.codeCard a {
+    display: block;
+    margin-top: 10px;
+    color: var(--blue);
+}
+
+.codeCard a:hover {
+    text-decoration: underline;
+}
+
+/*! CONTACT PAGE */
+
+/* Wrapper div */
+.contact-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 140px);
+    background-color: var(--tan);
+}
+
+/* Form container */
+.contact-form-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+/* Heading */
+.contact-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--black);
+}
+
+/* Form field label */
+.contact-page label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--black);
+}
+
+/* Input fields */
+.contact-page input,
+.contact-page textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--gray);
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.contact-page input:focus,
+.contact-page textarea:focus {
+    outline: none;
+    border-color: var(--blue);
+}
+
+/* Button */
+.contact-page button {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: var(--green);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contact-page button:hover {
+    background-color: var(--gray);
+}
+
+/* Error message */
+.contact-page .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/*! RESUME PAGE */
+
+.resume-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 140px);
+    background-color: var(--tan);
+}
+
+.resume-content-container {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.resume-content-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--black);
+}
+
+.resume-content-container p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.resume-content-container p a {
+    color: var(--blue);
+}
+
+.skills-section {
+    margin-bottom: 30px;
+}
+
+.skills-section h2 {
+    color: var(--black);
+}
+
+.skills-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills-section li {
+    margin-bottom: 5px;
+}
